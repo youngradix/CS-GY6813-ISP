@@ -1,0 +1,17 @@
+# New File Operation
+if "testfile.txt.a" in listfiles():
+  removefile("testfile.txt.a")
+if "testfile.txt.b" in listfiles():
+  removefile("testfile.txt.b")
+
+#this attacks threading
+myfile=ABopenfile("testfile.txt",True)  #Create an AB file
+myfile2=ABopenfile("testfile.txt",True)
+
+myfile.writeat("Syeet12E",0)
+myfile2.writeat("S12abE",0)
+
+myfile2.close()
+myfile.close()
+
+assert('SE' != myfile.readat(None,0))

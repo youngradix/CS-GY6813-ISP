@@ -1,0 +1,12 @@
+#this attacks file length
+myfile=ABopenfile("testfile.txt",True)  #Create an AB file
+
+# I should get 'SE' when reading an empty file...
+assert('SE' == myfile.readat(None,0))
+
+# put some long data in the file.
+myfile.writeat("Stest12345",0)
+myfile.readat(None, 10)
+
+#Close the file
+myfile.close()
