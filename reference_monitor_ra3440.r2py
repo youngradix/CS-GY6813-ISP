@@ -62,6 +62,9 @@ class ABFile():
   def close(self):
     bData = self.Bfile.readat(None, 0)
     if bData[0] == "S" and bData[-1:] == "E":
+      #self.Afile.close()
+      #self.Bfile.close()
+      #self.Afile = openfile(self.Afn, True)
       self.Afile.writeat(bData, 0)
       self.Afile.close()
       self.Bfile.close()
